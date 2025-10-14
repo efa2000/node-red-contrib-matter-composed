@@ -1,0 +1,28 @@
+{
+  "name": "node-red-contrib-matter-composed",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "node-red": {
+    "nodes": {
+      "sample-node": "dist/nodes/sample-node.js",
+      "advanced-node": "dist/nodes/advanced-node.js"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "node-red",
+    "typescript",
+    "custom-nodes"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
