@@ -1,14 +1,11 @@
-// src/index.ts
+import { ServerNode } from "@matter/main";
+import { OnOffLightDevice } from "@matter/main/devices/on-off-light";
+// Create the "node".  In Matter a "node" is a standalone device
+const node = await ServerNode.create();
+// Create the light "endpoint".  In Matter an "endpoint" is a component of a node
+const light = await node.add(OnOffLightDevice);
+// Add an event handler to log the light's current status
+light.events.onOff.onOff$Changed.on(value => console.log(`Light is now ${value}`));
 
-// Новая функция из ES2025: Set.prototype.union
-const setA = new Set([1, 2, 3]);
-const setB = new Set([3, 4, 5]);
-
-const unionSet = setA.union(setB);
-console.log('Объединение множеств:', Array.from(unionSet)); // [1, 2, 3, 4, 5]
-
-function sayHello(name: string): void {
-  console.log(`Привет, ${name}! Добро пожаловать в базовый проект ES2025 + TypeScript.`);
-}
-
-sayHello('Мир');
+// Run our server
+await node.start();

@@ -2,25 +2,28 @@
   "name": "red-contrib-matter-composed",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "build": "npx tsc",
-    "start": "npx tsc & node dist/index.js",
+    "build": "tsc",
+    "start": "tsc & node dist/index.js",
     "dev": "npx tsc -w"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/efa2000/node-red-contrib-matter-composed.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/efa2000/node-red-contrib-matter-composed/issues"
   },
   "homepage": "https://github.com/efa2000/node-red-contrib-matter-composed#readme",
   "devDependencies": {
+    "@types/node": "^24.7.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@matter/main": "^0.15.5"
   }
 }
